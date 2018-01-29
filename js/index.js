@@ -19,5 +19,10 @@ function loop() {
     ctx.lineTo(0,0)
     ctx.closePath()
     ctx.fill()
+    requestAnimationFrame(loop)
 }
-setInterval(loop,16.66)
+window.requestAnimationFrame(loop)
+window.onresize=function () {
+    var ch=bg.offsetHeight;
+    c.height=ch;
+}
