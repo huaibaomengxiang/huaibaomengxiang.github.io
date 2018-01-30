@@ -3,7 +3,11 @@ ul{
   height: 100%;
   padding: 20px;
   li{
-    margin:10px;
+    margin:10px 0 20px 0;
+    padding:20px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px 3px rgba(0,0,0,.3);
+    animation: showList .5s ease-in-out;
     h3{
       text-align: center;
       padding-bottom: 10px;
@@ -23,7 +27,7 @@ ul{
           left:0;
           bottom: -3px;
           transform: scale(0);
-          transition: all .3s ease-in-out;
+          transition: all .5s ease-in-out;
         }
       }
 
@@ -37,7 +41,7 @@ ul{
     }
     button{
       display: block;
-      margin:10px auto;
+      margin:30px auto;
       border:2px solid #555;
       background: #000;
       padding:5px 10px;
@@ -48,11 +52,41 @@ ul{
         color: #fff;
       }
     }
-    .cutOff{
-      width: 8%;
-      height: 1px;
-      background: #000;
-      margin: 50px auto;
-    }
+  }
+}
+@keyframes showList {
+  0%{
+    //transform: scale(0);
+    //transform: rotate(45deg);
+
+    //transform-origin:0% 100%;
+    //transform: rotate(45deg);
+
+    //transform: scale(1);
+
+    //transform: rotate3d(45,45,45,45deg);
+    transform: translatex(1200px) skew(20deg);
+
+  }
+  50%{
+    transform: translatex(0px) skew(20deg);
+  }
+  70%{
+    transform: translatex(0px) skew(-20deg);
+  }
+  90%{
+    transform: translatex(0px) skew(10deg);
+  }
+  100%{
+    //transform: scale(1);
+
+    //transform: rotate(0deg);
+
+    //transform-origin:0% 100%;
+    //transform: rotate(0deg);
+
+    //transform: scale(1.05);
+    //transform: rotate3d(0,0,0,45deg);
+    transform: translatex(0px) skew(0deg);
   }
 }
