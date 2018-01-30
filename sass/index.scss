@@ -1,5 +1,11 @@
 body{
   background: #eee;
+  position: relative;
+  canvas{
+    position: absolute;
+    left:0;
+    top:0;
+  }
 }
 main{
   width: 1200px;
@@ -18,6 +24,7 @@ main{
   text-align: center;
   overflow: hidden;
   box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.3);
+  margin-right: 20px;
   canvas{
     display: block;
     position: absolute;
@@ -42,7 +49,7 @@ main{
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      transition: all .3s ease-in;
+      transition: all .3s linear;
       &:hover{
         transform: scale(1.5);
       }
@@ -67,25 +74,31 @@ main{
     padding-top: 20px;
     li{
       padding:5px 0;
-      position: relative;
       &:hover{
-        background: #782dff;
-        color: #fff;
+        background: #a3f3ff;
         cursor: pointer;
+      }
+      a{
+        position: relative;
         &:after{
-          transform: scale(1);
+          content: '';
+          width: 5px;
+          height:5px;
+          background: #fff;
+          border-radius: 50%;
+          position: absolute;
+          right: 40%;
+          top:50%;
+          display: none;
         }
       }
-      &:after{
-        content: "";
-        width: 100%;
-        height: 2px;
-        background: #fff;
-        position: absolute;
-        left:0;
-        bottom: 0;
-        transform: scale(0);
-        transition: all .3s ease-in-out;
+    }
+    li.active{
+      background: #a3f3ff;
+      a{
+        &:after{
+          display: block;
+        }
       }
     }
   }
@@ -104,10 +117,18 @@ main{
 .content{
   flex: 1;
   height: 100%;
+  position: relative;
   iframe{
     width: 100%;
     height: 100%;
+    background: #fff;
+    position: absolute;
+    left:0;
+    top:0;
   }
+}
+::-webkit-scrollbar{
+  display: none;
 }
 
 @keyframes welcome {

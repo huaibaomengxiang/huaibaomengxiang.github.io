@@ -1,0 +1,46 @@
+ul {
+  width: 100%;
+  height: 100%;
+  padding: 20px; }
+ul li {
+  margin: 10px; }
+ul li h3 {
+  text-align: center;
+  padding-bottom: 10px; }
+ul li h3 a {
+  position: relative; }
+ul li h3 a:hover:after {
+  transform: scale(1); }
+ul li h3 a:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #000;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  transform: scale(0);
+  transition: all .3s ease-in-out; }
+ul li article {
+  line-height: 30px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden; }
+ul li button {
+  display: block;
+  margin: 10px auto;
+  border: 2px solid #555;
+  background: #000;
+  padding: 5px 10px; }
+ul li button:hover {
+  border: 2px solid #222; }
+ul li button a {
+  color: #fff; }
+ul li .cutOff {
+  width: 8%;
+  height: 1px;
+  background: #000;
+  margin: 50px auto; }
+
+/*# sourceMappingURL=home.css.map */

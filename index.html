@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
+    <canvas class="bbg"></canvas>
     <main>
         <section class="myInfo">
             <canvas id="bg"></canvas>
@@ -22,19 +23,21 @@
                 <h2>山佳的博客</h2>
                 <p class="motto">style hungry,style foolish</p>
                 <ul>
-                    <li>首页</li>
-                    <li>分类</li>
+                    <li class="active"><a href="./page/home.html" target="content">首页</a></li>
+                    <li><a href="./categroy.html" target="content">分类</a></li>
                 </ul>
                 <a href="https://github.com/huaibaomengxiang" target="_blank">github:https://github.com/huaibaomengxiang</a>
                 <div class="feihua">欢迎star</div>
             </div>
         </section>
         <section class="content">
-            <iframe name="content" frameborder="0" border="0" marginwidth="0" marginheight="0">
+            <iframe src="page/home.html" name="content" frameborder="0" border="0" marginwidth="0" marginheight="0">
 
             </iframe>
         </section>
     </main>
 </body>
 </html>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/utils.js"></script>
 <script src="js/index.js"></script>
