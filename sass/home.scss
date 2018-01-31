@@ -7,7 +7,6 @@ ul{
     padding:20px;
     border-radius: 3px;
     box-shadow: 0 0 10px 3px rgba(0,0,0,.3);
-    animation: showList .5s ease-in-out;
     h3{
       text-align: center;
       padding-bottom: 10px;
@@ -27,7 +26,7 @@ ul{
           left:0;
           bottom: -3px;
           transform: scale(0);
-          transition: all .5s ease-in-out;
+          transition: all .2s ease-in-out;
         }
       }
 
@@ -53,6 +52,9 @@ ul{
       }
     }
   }
+  li.active{
+    animation: showList .8s ease-in-out;
+  }
 }
 @keyframes showList {
   0%{
@@ -65,16 +67,17 @@ ul{
     //transform: scale(1);
 
     //transform: rotate3d(45,45,45,45deg);
-    transform: translatex(1200px) skew(20deg);
+    opacity: 0;
+    transform: translatex(2000px) skew(20deg);
 
   }
-  50%{
+  40%{
     transform: translatex(0px) skew(20deg);
   }
-  70%{
-    transform: translatex(0px) skew(-20deg);
+  60%{
+    transform: translatex(0px) skew(-15deg);
   }
-  90%{
+  80%{
     transform: translatex(0px) skew(10deg);
   }
   100%{
@@ -87,6 +90,7 @@ ul{
 
     //transform: scale(1.05);
     //transform: rotate3d(0,0,0,45deg);
+    opacity: 1;
     transform: translatex(0px) skew(0deg);
   }
 }
