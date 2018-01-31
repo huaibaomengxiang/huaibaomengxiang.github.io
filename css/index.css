@@ -187,10 +187,10 @@ main {
   }
   .myInfo .container ul li {
     padding: 0;
+    margin-right: 10px;
   }
   .myInfo .container ul li a {
     padding: 0 10px;
-    margin-bottom: 50px;
   }
   .myInfo .container ul li a:after {
     top: 45%;

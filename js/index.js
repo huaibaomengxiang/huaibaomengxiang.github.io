@@ -40,6 +40,8 @@ var actx=ac.getContext('2d'),
     lineDistance=80;
 if(window.innerWidth>=970){
     mouse=window.utils.captureMouse(ac);
+}else{
+    mouse={x:0,y:0}
 }
 
 function Dot() {

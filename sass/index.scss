@@ -79,6 +79,7 @@ main{
       }
       a{
         position: relative;
+
         &:after{
           content: '';
           width: 5px;
@@ -180,9 +181,10 @@ main{
         justify-content: center;
         li{
           padding:0;
+          margin-right: 10px;
           a{
             padding:0 10px;
-            margin-bottom: 50px;
+            //margin-bottom: 50px;
             &:after{
               top:45%;
               right: 5%;
