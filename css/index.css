@@ -152,7 +152,12 @@ main {
     transform: scale(0.9, 1.1);
   }
 }
-@media screen and (max-width: 970px) {
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+  main {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 800px) {
   .bbg {
     display: none;
   }
