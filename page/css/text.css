@@ -1,0 +1,17 @@
+h2,h3,h4,h5,h6{
+    text-align: center;
+}
+a{
+    color: #3c3fff;
+    text-decoration: none;
+}
+main{
+    padding: 20px;
+    font-size: 18px;
+}
+p{
+    line-height: 30px;
+}
+span{
+    color: #0f19ff;
+}

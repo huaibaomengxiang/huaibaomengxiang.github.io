@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        list-style: none;
+        box-sizing: border-box;
+    }
+    html,body{
+        width: 100%;
+        height: 100%;
+        padding-top: 50px;
+    }
+    canvas{
+        position: absolute;
+        left:0;
+        top:0;
+        background: #bbb;
+    }
+</style>
+<body>
+    <canvas width="1000" height="600"></canvas>
+</body>
+</html>
+<script>
+    var c=document.querySelector("canvas")
+    c.width=window.innerWidth
+    c.height=window.innerHeight
+    var ctx=c.getContext("2d")
+
+    function Line() {
+        //垂直方向的线
+        this.x=Math.random()*c.width
+        this.endx=Math.random()*c.width
+        if(this.endx==this.x){
+            if(this.x+10>c.width){
+                this.endx=this.x-10
+            }else{
+                this.endx=this.x+10
+            }
+        }
+        //水平方向的线
+        this.y=Math.random()*c.height
+        this.endy=Math.random()*c.height
+        if(this.endy==this.y){
+            if(this.y+10>c.height){
+                this.endy=this.y-10
+            }else{
+                this.endy=this.y+10
+            }
+        }
+        //随机线的方向
+        this.d=Math.random()
+        if(this.d>0.5){
+            this.k=-c.height/(this.endx-this.x)
+            this.b=-(this.k*this.x)
+        }else {
+            this.k=-(this.endy-this.y)/c.width
+            this.b=-this.y
+        }
+        this.speed={
+            x:5,
+            endx:5,
+            y:5,
+            endy:5,
+        }
+        this.panit=function(){
+            ctx.beginPath()
+            if(this.d>0.5){
+                ctx.moveTo(this.x,0)
+                ctx.lineTo(this.endx,c.height)
+            }else {
+                ctx.moveTo(0,this.y)
+                ctx.lineTo(c.width,this.endy)
+            }
+            ctx.strokeStyle="black"
+            ctx.stroke()
+        }
+        this.step=function () {
+            if(this.x>c.width||this.x<0){
+                this.speed.x*=-1
+            }
+            if(this.endx>c.width||this.endx<0){
+                this.speed.endx*=-1
+            }
+            if(this.y>c.height||this.y<0){
+                this.speed.y*=-1
+            }
+            if(this.endy>c.height||this.endy<0){
+                this.speed.endy*=-1
+            }
+            if(this.d>0.5){
+                this.x+=this.speed.x
+                this.endx+=this.speed.endx
+                this.k=-c.height/(this.endx-this.x)
+                this.b=-(this.k*this.x)
+            }else {
+                this.y+=this.speed.y
+                this.endy+=this.speed.endy
+                this.k=-(this.endy-this.y)/c.width
+                this.b=-this.y
+            }
+
+        }
+    }
+    function Dot(dx,dy) {
+        console.log(dx,dy)
+        this.paint=function () {
+            ctx.beginPath()
+            ctx.arc(dx,dy,3,0, Math.PI * 2,false)
+            ctx.fillStyle="rgba(0,0,0,.5)"
+            ctx.fill()
+        }
+    }
+
+
+//    大量
+    var lines=[]
+    var dots=[]
+    function creatDot() {
+        var aa=[]
+        for(var i=0;i<lines.length;i++){
+            for(var j=1;j<lines.length;j++){
+                var dx=(lines[i].b-lines[j].b)/(lines[j].k-lines[i].k)
+                var dy=-(lines[i].k*dx+lines[i].b)
+                var dot=new Dot(dx,dy)
+                aa.push(dot)
+            }
+        }
+        dots=aa
+    }
+    function paintDot() {
+        for(var i=0;i<dots.length;i++){
+            dots[i].paint()
+        }
+    }
+    function creatLine(num) {
+        var line=new Line()
+        if(lines.length<num){
+            lines.push(line)
+        }
+    }
+    function paintLine() {
+        for(var i=0;i<lines.length;i++){
+            lines[i].panit()
+        }
+    }
+    function stepLine() {
+        for(var i=0;i<lines.length;i++){
+            lines[i].step()
+        }
+    }
+//一根
+//    var lineone=new Line()
+//    var linetwo=new Line()
+//    setInterval(function () {
+//        ctx.clearRect(0,0,c.width,c.height)
+//        lineone.panit()
+//        linetwo.panit()
+//        var dx=(linetwo.b-lineone.b)/(lineone.k-linetwo.k)
+//        var dy=-(linetwo.k*dx+linetwo.b)
+//        var dot=new Dot(dx,dy)
+//        dot.paint()
+//        lineone.step()
+//        linetwo.step()
+//
+//    },50)
+
+
+//    setInterval(function () {
+//        ctx.clearRect(0,0,c.width,c.height)
+//        creatLine(3)
+//        paintLine()
+//        creatDot()
+//        paintDot()
+//        stepLine()
+//    },1000)
+
+    function move() {
+        ctx.clearRect(0,0,c.width,c.height)
+        creatLine(8)
+        paintLine()
+        creatDot()
+        paintDot()
+        stepLine()
+        requestAnimationFrame(move)
+    }
+    window.requestAnimationFrame(move)
+    window.onresize=function () {
+        c.width=window.innerWidth;
+        c.height=window.innerHeight;
+    }
+
+</script>
