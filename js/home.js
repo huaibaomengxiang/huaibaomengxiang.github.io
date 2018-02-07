@@ -5,8 +5,6 @@ $("li").each(function () {
     var obj={min:$(this).offset().top,max:$(this).offset().top+$(this).height()}
     list.push(obj)
 })
-console.log(maxPageTop,minPageTop)
-console.log(list)
 list.forEach(function (v,i) {
     if(minPageTop<v.min&&v.min<maxPageTop){
         $("li").eq(i).addClass("active")
