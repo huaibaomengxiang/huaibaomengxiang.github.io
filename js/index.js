@@ -73,7 +73,9 @@ function Dot() {
 }
 function Line(d1,d2) {
     actx.beginPath()
-    actx.strokeStyle="rgba(0,0,0,0.1)"
+    let w=(lineDistance-Distance(d1,d2))/lineDistance
+    actx.lineWidth=w/2
+    actx.strokeStyle=`rgba(0,0,0,${w+0.2})`
     actx.moveTo(d1.x,d1.y)
     actx.lineTo(d2.x,d2.y)
     actx.closePath()
