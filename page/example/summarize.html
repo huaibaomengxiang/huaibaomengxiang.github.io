@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/basic.css">
+    <link rel="stylesheet" href="../css/summarize.css">
+</head>
+<body>
+    <main>
+        <h2>知识总结</h2>
+        <h3 class="categary"><p class="active">HTML</p><p>CSS</p><p>javascript</p></h3>
+        <div class="content">
+            <section class="active">
+                <ul>
+                    <li>
+                        <h4>一、html5新特性</h4>
+                        <p>1.语义化标签</p>
+                        <p>2.多媒体标签 audio跟video</p>
+                        <p>3.canvas标签</p>
+                        <p>4.本地存储localstorage</p>
+                        <p>5.websocket</p>
+                    </li>
+                    <li>
+                        <h4>二、Doctype作用？标准模式与兼容模式各有什么区别?</h4>
+                        <p>1.<!DOCTYPE>声明位于位于HTML文档中的第一行，处于html标签之前。告知浏览器的解析器用什么文档标准解析这个文档。DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。</p>
+                        <p>2.标准模式的排版 和JS运作模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式显示,模拟老式浏览器的行为以防止站点无法工作。</p>
+                    </li>
+                    <li>
+                        <h4>三、行内元素有哪些？块级元素有哪些？空(void)元素有那些？</h4>
+                        <p>1.行内元素：img a span i b input select strong</p>
+                        <p>2.块元素：div section p ul li  h1-h6</p>
+                        <p>3.空元素：br hr img input link meta</p>
+                    </li>
+                    <li>
+                        <h4>四、介绍一下你对浏览器内核的理解？</h4>
+                        <p>主要分成两部分：渲染引擎(layout engineer或Rendering Engine)和JS引擎</p>
+                        <p>渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。</p>
+                        <p>JS引擎则：解析和执行javascript来实现网页的动态效果</p>
+                    </li>
+                    <li>
+                        <h4>五、常见的浏览器内核有哪些？</h4>
+                        <p>1.Trident内核：IE,MaxThon,TT,The World,360,搜狗浏览器等。[又称MSHTML]</p>
+                        <p>2.Gecko内核：Netscape6及以上版本，FF,MozillaSuite/SeaMonkey等</p>
+                        <p>3.Presto内核：Opera7及以上。      [Opera内核原为：Presto，现为：Blink;]</p>
+                        <p>4.Webkit内核：Safari,Chrome等。   [ Chrome的：Blink（WebKit的分支）]</p>
+                    </li>
+                    <li>
+                        <h4>六、简述一下你对HTML语义化的理解？</h4>
+                        <p>1.用正确的标签做正确的事情。</p>
+                        <p>2.html语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析。</p>
+                        <p>3.即使在没有样式CSS情况下也以一种文档格式显示，并且是容易阅读的。</p>
+                        <p>4.搜索引擎的爬虫也依赖于HTML标记来确定上下文和各个关键字的权重，利于SEO。</p>
+                        <p>5.使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。</p>
+                    </li>
+                    <li>
+                        <h4>七、简述一下你对HTML语义化的理解？</h4>
+                        <p>1.用正确的标签做正确的事情。</p>
+                        <p>2.html语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析。</p>
+                        <p>3.即使在没有样式CSS情况下也以一种文档格式显示，并且是容易阅读的。</p>
+                        <p>4.搜索引擎的爬虫也依赖于HTML标记来确定上下文和各个关键字的权重，利于SEO。</p>
+                        <p>5.使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。</p>
+                    </li>
+                    <li>
+                        <h4>八、请描述一下 cookies，sessionStorage 和 localStorage 的区别？</h4>
+                        <p>1.cookie是网站为了标示用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。
+                            cookie数据始终在同源的http请求中携带（即使不需要），记会在浏览器和服务器间来回传递。
+                            sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。
+                        </p>
+                        <p>存储大小：
+                            cookie数据大小不能超过4k。
+                            sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。
+                        </p>
+                        <p>
+                            有期时间：
+                            localStorage    存储持久数据，浏览器关闭后数据不丢失除非主动删除数据；
+                            sessionStorage  数据在当前浏览器窗口关闭后自动删除。
+                            cookie          设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭
+                        </p>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <ul>
+                    <li>
+                        <h4>1.css盒子模型</h4>
+                        <p>标准盒子模型:content+padding+border+margin</p>
+                        <p>ie盒子模型:content(包含padding,border)+margin</p>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <p>js</p>
+                <ul>
+                    <li>
+                        <h4></h4>
+                        <p></p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
+<script src="../../js/rem.js"></script>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/summarize.js"></script>
