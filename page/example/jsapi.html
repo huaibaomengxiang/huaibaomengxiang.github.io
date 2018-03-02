@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/basic.css">
+    <link rel="stylesheet" href="../css/summarize.css">
+</head>
+<body>
+<main>
+    <h2>一些常用的属性和方法</h2>
+    <h3 class="categary"><p class="active">字符串</p><p>数组</p><p>数学</p></h3>
+    <div class="content">
+        <section class="active">
+            <ul>
+                <li>
+                    <h4>一、大小写转换</h4>
+                    <p>1 str.toLowerCase() 所有字符转换成小写</p>
+                    <p>2 str.toUpperCase() 所有字符转换成大写</p>
+                </li>
+                <li>
+                    <h4>二、获取指定位置字符</h4>
+                    <p>1 str.charAt(index)</p>
+                    <p>"abc".charAt(0)==>"a"</p>
+                </li>
+                <li>
+                    <h4>三、获取指定位置字符的unicode编码</h4>
+                    <p>1 str.charCodeAt(index)</p>
+                    <p>"abc".charAt(0)==>97</p>
+                </li>
+                <li>
+                    <h4>四、查找关键字</h4>
+                    <p>1 str.indexOf(ele)</p>
+                    <p>"abc".indexOf("a")==>0</p>
+                    <p>2 str.lastIndexOf("a")</p>
+                    <p>"abc".lastIndexOf("a")==>2</p>
+                </li>
+                <li>
+                    <h4>五、截取字符串</h4>
+                    <p>1 str.substr(start,len)</p>
+                    <p>2 str.slice(start,end) 支持负数</p>
+                    <p>3 str.substring(start,end) 不支持负数</p>
+                </li>
+                <li>
+                    <h4>六、字符串变数组</h4>
+                    <p>str.split(reg,count)</p>
+                    <p>"a|b|c".split("|",2)==>["a","b"]</p>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <ul>
+                <li>
+                    <h4>1.css盒子模型</h4>
+                    <p>标准盒子模型:content+padding+border+margin</p>
+                    <p>ie盒子模型:content(包含padding,border)+margin</p>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <ul>
+                <li>
+                    <h4>js严格模式跟兼容模式的区别</h4>
+                    <p>
+                        严格模式下, delete运算符后跟随非法标识符(即delete 不存在的标识符)，会抛出语法错误； 非严格模式下，会静默失败并返回false
+                    </p>
+                    <p>严格模式中，对象直接量中定义同名属性会抛出语法错误； 非严格模式不会报错</p>
+                    <p>严格模式中，函数形参存在同名的，抛出错误； 非严格模式不会</p>
+                    <p>严格模式不允许八进制整数直接量（如：023）</p>
+                    <p>严格模式中，arguments对象是传入函数内实参列表的静态副本；非严格模式下，arguments对象里的元素和对应的实参是指向同一个值的引用
+                    </p>
+                    <p>严格模式中 eval和arguments当做关键字，它们不能被赋值和用作变量声明</p>
+                    <p>严格模式会限制对调用栈的检测能力，访问arguments.callee.caller会抛出异常</p>
+                    <p>
+                        严格模式 变量必须先声明，直接给变量赋值，不会隐式创建全局变量，不能用with
+                    </p>
+                    <p>严格模式中 call apply传入null undefined保持原样不被转换为window</p>
+                </li>
+            </ul>
+        </section>
+    </div>
+</main>
+</body>
+</html>
+<script src="../../js/rem.js"></script>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/summarize.js"></script>
