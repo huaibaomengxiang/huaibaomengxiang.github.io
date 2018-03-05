@@ -23,7 +23,7 @@
         position: absolute;
         left:0;
         top:0;
-        background: #bbb;
+        background: #eee;
     }
 </style>
 <body>
@@ -67,10 +67,10 @@
             this.b=-this.y
         }
         this.speed={
-            x:5,
-            endx:5,
-            y:5,
-            endy:5,
+            x:1,
+            endx:1,
+            y:1,
+            endy:1,
         }
         this.panit=function(){
             ctx.beginPath()
@@ -81,7 +81,7 @@
                 ctx.moveTo(0,this.y)
                 ctx.lineTo(c.width,this.endy)
             }
-            ctx.strokeStyle="black"
+            ctx.strokeStyle="#999"
             ctx.stroke()
         }
         this.step=function () {
