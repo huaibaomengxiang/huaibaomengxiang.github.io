@@ -60,21 +60,27 @@ ul{
   li.active{
     animation: showList .8s ease-in-out;
   }
+  li.fade{
+    animation: fade .8s ease-in-out;
+  }
+  li.xuanzhuan{
+    animation: xuanzhuan .8s ease-in-out;
+  }
+  li.xuanzhuantwo{
+    animation: xuanzhuantwo .8s ease-in-out;
+  }
+  li.scale{
+    animation: scale .8s ease-in-out;
+  }
+  li.threeRotate
+  {
+    animation:threeRotate .8s linear;
+  }
 }
 @keyframes showList {
   0%{
-    //transform: scale(0);
-    //transform: rotate(45deg);
-
-    //transform-origin:0% 100%;
-    //transform: rotate(45deg);
-
-    //transform: scale(1);
-
-    //transform: rotate3d(45,45,45,45deg);
     opacity: 0;
     transform: translatex(2000px) skew(20deg);
-
   }
   40%{
     transform: translatex(0px) skew(20deg);
@@ -86,16 +92,70 @@ ul{
     transform: translatex(0px) skew(10deg);
   }
   100%{
-    //transform: scale(1);
-
-    //transform: rotate(0deg);
-
-    //transform-origin:0% 100%;
-    //transform: rotate(0deg);
-
-    //transform: scale(1.05);
-    //transform: rotate3d(0,0,0,45deg);
     opacity: 1;
     transform: translatex(0px) skew(0deg);
   }
 }
+@keyframes threeRotate {
+  0%{
+    transform: rotateX(0deg) skew(0deg);
+  }
+  16%{
+    transform: rotateX(30deg) skew(-30deg);
+  }
+
+  32%{
+    transform: rotateX(0deg) skew(0deg);
+  }
+
+  48%{
+    transform: rotateX(30deg) skew(25deg);
+  }
+  64%{
+    transform: rotateX(0deg) skew(0);
+  }
+  80%{
+    transform: rotateX(30deg) skew(-30deg);
+  }
+  100%{
+    transform: rotateX(0deg) skew(0);
+  }
+}
+@keyframes fade {
+  0%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+@keyframes xuanzhuan {
+  0%{
+    transform: rotate(45deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+@keyframes xuanzhuantwo {
+  0%{
+    transform-origin:0% 100%;
+    transform: rotate(45deg);
+  }
+  100%{
+    transform-origin:0% 100%;
+    transform: rotate(0deg);
+  }
+}
+@keyframes scale {
+  0%{
+    transform: scale(0.8);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
