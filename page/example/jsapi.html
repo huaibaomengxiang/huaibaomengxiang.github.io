@@ -49,37 +49,160 @@
                     <p>str.split(reg,count)</p>
                     <p>"a|b|c".split("|",2)==>["a","b"]</p>
                 </li>
+                <li>
+                    <h4>七、字符串替换</h4>
+                    <p>str.replace(reg,item)</p>
+                    <p>"abc".replace("a","d")=>"dbc"</p>
+                </li>
+                <li>
+                    <h4>八、去除两边空格</h4>
+                    <p>str.trim()</p>
+                    <p>"   abc   ".trim()=>"abc"</p>
+                </li>
             </ul>
+            <p>以上是一些常用的方法,更多的请看菜鸟教程<a style="color: green" href="http://www.runoob.com/jsref/jsref-obj-array.html">http://www.runoob.com/jsref/jsref-obj-string.html</a></p>
+
         </section>
         <section>
             <ul>
                 <li>
-                    <h4>1.css盒子模型</h4>
-                    <p>标准盒子模型:content+padding+border+margin</p>
-                    <p>ie盒子模型:content(包含padding,border)+margin</p>
+                    <h4>连接多个数组 concat()</h4>
+                    <p>arr1=["1","2","3"],arr2=["4","5","6"]</p>
+                    <p>arr1.concat(arr2)=>["1","2","3","4","5","6"]</p>
+                </li>
+                <li>
+                    <h4>数组变字符串 join()</h4>
+                    <p>arr1=["1","2","3"]</p>
+                    <p>arr1.join("++")=>1++2++3</p>
+                    <p>arr1.join()=>1,2,3</p>
+                </li>
+                <li>
+                    <h4>pop()</h4>
+                    <p>arr1=["1","2","3"]</p>
+                    <p>arr1.pop()=>3,arr1=["1","2"]</p>
+                </li>
+                <li>
+                    <h4>push()</h4>
+                    <p>arr1=["1","2","3"]</p>
+                    <p>arr1.push("4")=>4(新数组的长度),arr1=["1","2","3","4"]</p>
+                </li>
+                <li>
+                    <h4>shift()</h4>
+                    <p>arr1=["1","2","3"]</p>
+                    <p>arr1.shift()=>"1"(删除并返回数组第一个元素),arr1=["2","3"]</p>
+                </li>
+                <li>
+                    <h4>unshift()</h4>
+                    <p>arr1=["1","2","3"]</p>
+                    <p>arr1.unshift("4")=>4(新数组的长度),arr1=["4","1","2","3"]</p>
+                </li>
+                <li>
+                    <h4>reverse()</h4>
+                    <p>arr1=["1","2","3"]</p>
+                    <p>arr1.reverse()=>(翻转数组),arr1=["3","2","1"]</p>
+                </li>
+                <li>
+                    <h4>unshift()</h4>
+                    <p>arr1=["1","2","3"]</p>
+                    <p>arr1.unshift("4")=>4(新数组的长度),arr1=["4","1","2","3"]</p>
+                </li>
+                <li>
+                    <h4>slice()</h4>
+                    <p>arr1=["1","2","3","4","5"]</p>
+                    <p>arr1.slice(0,2)=>["1","2"],arr1=["4","1","2","3"]</p>
+                </li>
+                <li>
+                    <h4>sort()</h4>
+                    <p>arr1=["1","3","5","2","4"]</p>
+                    <p>arr1.sort()=>(对原数组排序),arr1=["1","2","3","4","5"]</p>
+                </li>
+                <li>
+                    <h4>splice(index,num,item1,item2,...)</h4>
+                    <p>index:操作位置</p>
+                    <p>num:操作数量</p>
+                    <p>添加的元素</p>
+                    <p>arr=[1,2,3,4,5,6]</p>
+                    <p>arr.splice(2,2,7,8,9)=>[3,4],arr=[1,2,7,8,9,5,6]</p>
+                </li>
+                <li>
+                    <h4>every()</h4>
+                    <p>arr=[1,2,3,4,5,6]</p>
+                    <p>
+                        arr.every(v=>{
+                            return v>3
+                        })=>false;
+                    </p>
+                </li>
+                <li>
+                    <h4>map()</h4>
+                    <p>arr=[1,2,3,4,5,6]</p>
+                    <p>
+                        arr.map(v=>{
+                            return v*2
+                        })=>[2,4,6,8,10,12]
+                    </p>
+                </li>
+                <li>
+                    <h4>filter()</h4>
+                    <p>arr=[1,2,3,4,5,6]</p>
+                    <p>
+                        arr.filter(v=>{
+                        return v>3
+                        })=>[4,5,6]
+                    </p>
+                </li>
+                <li>
+                    <h4>forEach()</h4>
+                    <p>arr=[1,2,3,4,5,6]</p>
+                    <p>
+                        arr.forEach(v=>{
+                            console.log(v+1)
+                        })=>(2,3,4,5,6,7)
+                    </p>
                 </li>
             </ul>
+            <p>以上是一些常用的方法,更多的请看菜鸟教程<a style="color: green" href="http://www.runoob.com/jsref/jsref-obj-array.html">http://www.runoob.com/jsref/jsref-obj-array.html</a></p>
         </section>
         <section>
             <ul>
                 <li>
-                    <h4>js严格模式跟兼容模式的区别</h4>
-                    <p>
-                        严格模式下, delete运算符后跟随非法标识符(即delete 不存在的标识符)，会抛出语法错误； 非严格模式下，会静默失败并返回false
-                    </p>
-                    <p>严格模式中，对象直接量中定义同名属性会抛出语法错误； 非严格模式不会报错</p>
-                    <p>严格模式中，函数形参存在同名的，抛出错误； 非严格模式不会</p>
-                    <p>严格模式不允许八进制整数直接量（如：023）</p>
-                    <p>严格模式中，arguments对象是传入函数内实参列表的静态副本；非严格模式下，arguments对象里的元素和对应的实参是指向同一个值的引用
-                    </p>
-                    <p>严格模式中 eval和arguments当做关键字，它们不能被赋值和用作变量声明</p>
-                    <p>严格模式会限制对调用栈的检测能力，访问arguments.callee.caller会抛出异常</p>
-                    <p>
-                        严格模式 变量必须先声明，直接给变量赋值，不会隐式创建全局变量，不能用with
-                    </p>
-                    <p>严格模式中 call apply传入null undefined保持原样不被转换为window</p>
+                    <h4>Math.abs(x)</h4>
+                    <p>返回x的绝对值</p>
+                </li>
+                <li>
+                    <h4>Math.ceil(x)</h4>
+                    <p>向上取整</p>
+                </li>
+                <li>
+                    <h4>Math.floor(x)</h4>
+                    <p>向下取整</p>
+                </li>
+                <li>
+                    <h4>Math.max(x,y,...,z)</h4>
+                    <p>返回x,y,...,z中的最大值</p>
+                </li>
+                <li>
+                    <h4>Math.min(x,y,...,z)</h4>
+                    <p>返回x,y,...,z中的最小值</p>
+                </li>
+                <li>
+                    <h4>Math.pow(x,y)</h4>
+                    <p>返回x的y次幂</p>
+                </li>
+                <li>
+                    <h4>Math.random()</h4>
+                    <p>返回0-1之间的随机数</p>
+                </li>
+                <li>
+                    <h4>Math.round(x)</h4>
+                    <p>返回x四舍五入后的数</p>
+                </li>
+                <li>
+                    <h4>Math.sin(x),Math.cos(x),Math.tan(x)</h4>
+                    <p>返回x的正弦,余弦,正切值</p>
                 </li>
             </ul>
+            <p>以上是一些常用的方法,更多的请看菜鸟教程<a style="color: green" href="http://www.runoob.com/jsref/jsref-obj-array.html">http://www.runoob.com/jsref/jsref-obj-math.html</a></p>
         </section>
     </div>
 </main>
@@ -88,3 +211,9 @@
 <script src="../../js/rem.js"></script>
 <script src="../js/jquery-3.2.1.min.js"></script>
 <script src="../js/summarize.js"></script>
+<script>
+    var arr=[1,2,3,4,5,6]
+    var brr=arr.forEach(function (v) {
+        console.log(v*2)
+    })
+</script>
