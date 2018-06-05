@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <h2>1.一行代码实现数组随机排序</h2>
+            <p>
+                const shuffle = arr => arr.sort(() => Math.random() - 0.5)
+            </p>
+        </li>
+        <li>
+            <h2>2.实现一个函数foo,用法foo(1)(2)(3)=1*2*3=6</h2>
+            <p>
+                答案在下面script标签里
+            </p>
+        </li>
+        <li>
+            <h2>3.实现字符创indexOf功能</h2>
+            <p>
+
+            </p>
+        </li>
+        <li>
+            <h2></h2>
+            <p></p>
+        </li>
+    </ul>
+
+</body>
+</html>
+
+<script>
+    //2 答案
+    const foo=(function () {
+        let r=1;
+        return function (...args) {
+            r*=args.reduce((p,n)=>p+n);
+            foo.valueOf=()=>r;
+            return foo;
+        }
+    }())
+
+</script>
