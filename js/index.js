@@ -37,7 +37,7 @@ ac.width=window.innerWidth;
 ac.height=window.innerHeight;
 var actx=ac.getContext('2d'),
     dots=[],
-    lineDistance=80;
+    lineDistance=100;
 if(window.innerWidth>=970){
     mouse=window.utils.captureMouse(ac);
 }else{
@@ -90,15 +90,15 @@ function creatDot(num) {
 function paintDot() {
     for(let i=0;i<dots.length;i++){
         dots[i].paint()
-        if(Distance(dots[i],mouse)<lineDistance){
+        if(80<Distance(dots[i],mouse)&&Distance(dots[i],mouse)<lineDistance+50){
             var mouseLine=new Line(dots[i],mouse)
             let dx=mouse.x-dots[i].x
             let dy=mouse.y-dots[i].y
-            dots[i].angle=Math.atan2(dy,dx)
-            var vx=Math.cos(dots[i].angle)*2
-            var vy=Math.sin(dots[i].angle)*2
-            dots[i].x+=vx
-            dots[i].y+=vy
+            // dots[i].angle=Math.atan2(dy,dx)
+            // var vx=Math.cos(dots[i].angle)*2
+            // var vy=Math.sin(dots[i].angle)*2
+            dots[i].x+=dx*0.03
+            dots[i].y+=dy*0.03
         }
         for(let j=1;j<dots.length;j++){
             if(Distance(dots[i],dots[j])<lineDistance){
