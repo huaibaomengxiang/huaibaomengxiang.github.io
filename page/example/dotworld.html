@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>粒子文字</title>
+</head>
+<body>
+  <canvas id="app">your browser is not support canvas</canvas>
+</body>
+</html>
+<script src="../js/dot.js"></script>
+<script>
+  DotsAnimation({
+    id: 'app',
+    arr: ['欢迎', '大家', '山佳', '谢谢各位'],
+    gap: 11,
+    cr: 227,
+    cg: 230,
+    cb: 195,
+  })
+</script>
