@@ -42,45 +42,60 @@ function DotsAnimation (options) {
 
   function getImageData () {
     if (dots.length > 0) {
+      dots = [];
       ctx.clearRect(0, 0, c.width, c.height);
-      drawText();
-      let dotsNum = 0;
-      let dotsIndex = 0;
-      const imageData = ctx.getImageData(0, 0, c.width, c.height);
-      const buffer = new Uint32Array(imageData.data.buffer);
-      for (let x = 0; x < imageData.width; x += grap) {
-        for (let y = 0; y < imageData.height; y += grap) {
-          if (buffer[y * imageData.width + x]) {
-            if (!dots[dotsIndex]) {
-              let dot = new Dot(x, y, 0, 3);
-              dots.push(dot);
-            } else {
-              dots[dotsIndex].dx = x;
-              dots[dotsIndex].dy = y;
-              dots[dotsIndex].xpos = x - c.width / 2;
-              dots[dotsIndex].ypos = y - c.height / 2;
-              dots[dotsIndex].zpos = 0;
-            }
-            dotsNum ++;
-            dotsIndex ++;
-          }
-        }
-      }
-      dots.sort(function (a, b) { return a.rz - b.rz })
-      dots.length = dotsNum;
-    } else {
-      drawText();
-      const imageData = ctx.getImageData(0, 0, c.width, c.height);
-      const buffer = new Uint32Array(imageData.data.buffer);
-      for (let x = 0; x < imageData.width; x += grap) {
-        for (let y = 0; y < imageData.height; y += grap) {
-          if (buffer[y * imageData.width + x]) {
-            let dot = new Dot(x, y, 0, 3);
-            dots.push(dot);
-          }
+    }
+    drawText();
+    const imageData = ctx.getImageData(0, 0, c.width, c.height);
+    const buffer = new Uint32Array(imageData.data.buffer);
+    for (let x = 0; x < imageData.width; x += grap) {
+      for (let y = 0; y < imageData.height; y += grap) {
+        if (buffer[y * imageData.width + x]) {
+          let dot = new Dot(x, y, 0, 3);
+          dots.push(dot);
         }
       }
     }
+    // if (dots.length > 0) {
+    //   ctx.clearRect(0, 0, c.width, c.height);
+    //   drawText();
+    //   let dotsNum = 0;
+    //   let dotsIndex = 0;
+    //   const imageData = ctx.getImageData(0, 0, c.width, c.height);
+    //   const buffer = new Uint32Array(imageData.data.buffer);
+    //   for (let x = 0; x < imageData.width; x += grap) {
+    //     for (let y = 0; y < imageData.height; y += grap) {
+    //       if (buffer[y * imageData.width + x]) {
+    //         if (!dots[dotsIndex]) {
+    //           let dot = new Dot(x, y, 0, 3);
+    //           dots.push(dot);
+    //         } else {
+    //           dots[dotsIndex].dx = x;
+    //           dots[dotsIndex].dy = y;
+    //           dots[dotsIndex].xpos = x - c.width / 2;
+    //           dots[dotsIndex].ypos = y - c.height / 2;
+    //           dots[dotsIndex].zpos = 0;
+    //         }
+    //         dotsNum ++;
+    //         dotsIndex ++;
+    //       }
+    //     }
+    //   }
+    //   dots.sort(function (a, b) { return a.rz - b.rz })
+    //   dots.length = dotsNum;
+    // } else {
+    //   drawText();
+    //   const imageData = ctx.getImageData(0, 0, c.width, c.height);
+    //   const buffer = new Uint32Array(imageData.data.buffer);
+    //   for (let x = 0; x < imageData.width; x += grap) {
+    //     for (let y = 0; y < imageData.height; y += grap) {
+    //       if (buffer[y * imageData.width + x]) {
+    //         let dot = new Dot(x, y, 0, 3);
+    //         dots.push(dot);
+    //       }
+    //     }
+    //   }
+    // }
     return dots;
   }
 
@@ -141,6 +156,7 @@ function DotsAnimation (options) {
             this.x = this.x + (this.dx - this.x) * speed;
             this.y = this.y + (this.dy - this.y) * speed;
             this.z = this.z + (this.dz - this.z) * speed;
+            this.r = r * 2;
             lastTime = +new Date();
           }
         } else {
