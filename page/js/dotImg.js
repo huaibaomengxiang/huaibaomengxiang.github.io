@@ -171,16 +171,22 @@ function DotImg(options) {
   })
   }
 
+  var stats = new Stats();
+  stats.showPanel( 1 ); // 0: fps, 1: ms, 2: mb, 3+: custom
+  document.body.appendChild( stats.dom );
+
   function animate() {
+    stats.begin();
     ctx.clearRect(0, 0, c.width, c.height);
     creatDots();
     paintDots();
+    stats.end();
     requestAnimationFrame(animate);
   }
 
   drawImg(img, dots);
   dots.sort(function(a, b) {
-    return a.ex - b.ex;
+    return a.dx - b.dx;
   });
   animate();
 
