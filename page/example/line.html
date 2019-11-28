@@ -67,10 +67,10 @@
             this.b=-this.y
         }
         this.speed={
-            x:1,
-            endx:1,
-            y:1,
-            endy:1,
+            x: 0.5 + Math.random(),
+            endx: 0.5 + Math.random(),
+            y: 0.5 + Math.random(),
+            endy: 0.5 + Math.random(),
         }
         this.panit=function(){
             ctx.beginPath()
@@ -111,6 +111,7 @@
 
         }
     }
+
     function Dot(dx,dy) {
         this.paint=function () {
             ctx.beginPath()
